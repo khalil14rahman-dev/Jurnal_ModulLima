@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ﻿public class Penjumlahan
 {
     /// <summary>
@@ -15,8 +15,6 @@
         Console.WriteLine($"Hasil penjumlahan: {hasil}");
     }
 }
-
-=======
 ﻿public class SimpleDataBase<T>
 {
     private List<T> storedData;
@@ -43,4 +41,27 @@
         }
     }
 }
->>>>>>> implementasi-generic-class
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Aturan NIM akhiran 3: Tipe data DOUBLE
+        // Angka input: 33 (dari 2-digit terakhir NIM)
+        double myNim = 33.0;
+
+        Console.WriteLine("=== Output Bagian 4: Generic Method ===");
+        Penjumlahan p = new Penjumlahan();
+        p.JumlahTigaAngka<double>(myNim, myNim, myNim);
+
+        Console.WriteLine("\n=== Output Bagian 6: Generic Class ===");
+        SimpleDataBase<double> db = new SimpleDataBase<double>();
+        db.AddNewData(myNim);
+        db.AddNewData(myNim);
+        db.AddNewData(myNim);
+        db.PrintAllData();
+
+        Console.WriteLine("\nTekan tombol apa saja untuk keluar...");
+        Console.ReadKey();
+    }
+}
